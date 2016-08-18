@@ -9,28 +9,28 @@
 		function setIdOrder($idOrder) {
 			$this->idOrder = $idOrder;
 		}
-		function getIdOrder($idOrder) {
+		function getIdOrder() {
 			return $this->idOrder;
 		}
 
 		function setDate($date) {
 			$this->date = $date;
 		}
-		function getDate($date) {
+		function getDate() {
 			return $this->date;
 		}
 
 		function setIdCustomer($idCustomer) {
 			$this->idCustomer = $idCustomer;
 		}
-		function getIdCustomer($idCustomer) {
+		function getIdCustomer() {
 			return $this->idCustomer;
 		}
 
 		function setAmount($amount) {
 			$this->amount = $amount;
 		}
-		function getAmount($amount) {
+		function getAmount() {
 			return $this->amount;
 		}
 

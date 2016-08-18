@@ -9,28 +9,28 @@
 		function setCode($code) {
 			$this->code = $code;
 		}
-		function getCode($code) {
+		function getCode() {
 			return $this->code;
 		}
 
 		function setName($name) {
 			$this->name = $name;
 		}
-		function getName($name) {
+		function getName() {
 			return $this->name;
 		}
 
 		function setQuantity($quantity) {
 			$this->quantity = $quantity;
 		}
-		function getQuantity($quantity) {
+		function getQuantity() {
 			return $this->quantity;
 		}
 
 		function setPrice($price) {
 			$this->price = $price;
 		}
-		function getPrice($price) {
+		function getPrice() {
 			return $this->price;
 		}
 

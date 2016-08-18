@@ -11,42 +11,42 @@
 		function setIdUser($idUser) {
 			$this->idUser = $idUser;
 		}
-		function getIdUser($idUser) {
+		function getIdUser() {
 			return $this->idUser;
 		}
 
 		function setPassword($password) {
 			$this->password = $password;
 		}
-		function getPassword($password) {
+		function getPassword() {
 			return $this->password;
 		}
 
 		function setFirstName($firstName) {
 			$this->firstName = $firstName;
 		}
-		function getFirstName($firstName) {
+		function getFirstName() {
 			return $this->firstName;
 		}
 
 		function setLastName($lastName) {
 			$this->lastName = $lastName;
 		}
-		function getLastName($lastName) {
+		function getLastName() {
 			return $this->lastName;
 		}
 
 		function setEmail($email) {
 			$this->email = $email;
 		}
-		function getEmail($email) {
+		function getEmail() {
 			return $this->email;
 		}
 
 		function setPermission($permission) {
 			$this->permission = $permission;
 		}
-		function getPermission($permission) {
+		function getPermission() {
 			return $this->permission;
 		}
 
