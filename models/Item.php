@@ -3,7 +3,7 @@
 
 		private $code;
 		private $name;
-		private $quantity;
+		private $description;
 		private $price;
 
 		function setCode($code) {
@@ -20,11 +20,11 @@
 			return $this->name;
 		}
 
-		function setQuantity($quantity) {
-			$this->quantity = $quantity;
+		function setDescription($description) {
+			$this->description = $description;
 		}
-		function getQuantity() {
-			return $this->quantity;
+		function getDescription() {
+			return $this->description;
 		}
 
 		function setPrice($price) {
