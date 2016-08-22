@@ -6,7 +6,7 @@
 	function show_items() {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', 'ecommerce');
+		$connection->connect('localhost', 'root', '', 'ecommerce');
 		$query = "SELECT * FROM items;";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -26,6 +26,8 @@
 				$items[$i]->setName($row->name);
 				$items[$i]->setDescription($row->description);
 				$items[$i]->setPrice($row->price);
+				$items[$i]->setImage($row->image);
+				$row = $connection->next();
 				$i++;
 
 			}
@@ -36,4 +38,5 @@
 		}
 
 	}
+		
 ?>

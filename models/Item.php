@@ -5,6 +5,7 @@
 		private $name;
 		private $description;
 		private $price;
+		private $image;
 
 		function setCode($code) {
 			$this->code = $code;
@@ -32,6 +33,13 @@
 		}
 		function getPrice() {
 			return $this->price;
+		}
+
+		function setImage($image) {
+			$this->image = $image;
+		}
+		function getImage() {
+			return $this->image;
 		}
 
 	}
