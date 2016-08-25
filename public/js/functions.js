@@ -37,4 +37,5 @@ function find_item() {
 
 	if(document.getElementById("finder").value.length > 0)
 		xmlhttp.send("searching=" + document.getElementById("finder").value);
+	
 }

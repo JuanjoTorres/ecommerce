@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Tienda de productos cosméticos</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="../public/css/style.css">
-	</head>
+	<!-- INCLUDE BLOCK : head -->
 	<body>
 		<!-- INCLUDE BLOCK : menu -->
 		<div class="container">
@@ -30,10 +25,25 @@
 				</div>
 				<!-- END BLOCK : card -->
 			</div>
+			<div class="modal fade" role="dialog">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">
+								<span>&times;</span>
+							</button>
+							<h4 class="modal-title">Auntenticación</h4>
+						</div>
+						<div class="modal-body">
+							
+						</div>
+						<div class="modal-footer">
+							<button class="btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<footer>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
-			<script type="text/javascript" src="../public/js/functions.js"></script>
-		</footer>
+		<!-- INCLUDE BLOCK : footer -->
 	</body>
 </html>
