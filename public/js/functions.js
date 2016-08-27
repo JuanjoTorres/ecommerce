@@ -1,7 +1,7 @@
-document.getElementById("finder").onkeyup = find_item(); 
+document.getElementById("searching").onkeyup = find_item; 
 
 function find_item() {
-
+	
 	xmlhttp = new XMLHttpRequest();
 
 	xmlhttp.onreadystatechange = function() {
@@ -15,7 +15,6 @@ function find_item() {
 			descriptions = xmldoc.getElementsByTagName("DESCRIPTION");
 			prices = xmldoc.getElementsByTagName("PRICE");
 			images = xmldoc.getElementsByTagName("IMAGE");
-
 			for(i = 0; i < codes.length; i++) {
 
 				source += '<div class="col-xs-4"><div class="card"><img class="card-img-top" src="'
@@ -34,8 +33,7 @@ function find_item() {
 
 	xmlhttp.open("POST","../models/AjaxItemsFinder.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-	if(document.getElementById("finder").value.length > 0)
-		xmlhttp.send("searching=" + document.getElementById("finder").value);
+	xmlhttp.send("searching=" + document.getElementById("searching").value);
+	
 	
 }
