@@ -1,15 +1,27 @@
-<nav class="navbar navbar-light bg-faded">
+<nav class="navbar navbar-light bg-faded m-b-2">
 	<a class="navbar-brand" href="showcase.php">Roser</a>
 	<div class="pull-xs-right">
-		<form class="form-inline">
-			<input class="form-controll" type="text" placeholder="Search your product!"></input>
-		</form>
-		<ul class="nav navbar-nav">
+		<ul class="nav nav-inline m-r-2">
 			<li class="nav-item">
-				<a class="nav-link">[user] Hola, {user_name}</a>
+				<p class="text-muted m-b-0">Bienvenido cliente</p>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link">[car]</a>
+				<form class="form-inline">
+					<input class="form-control" type="text" id="searching" placeholder="Search your product!"></input>
+				</form>
+			</li>
+			<li class="nav-item">
+				<div class="btn-group">
+					<button type="button" class="btn btn-secondary">A</button>
+					<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+				  	<div class="dropdown-menu">
+				    	<a class="dropdown-item" href="user-profile.php">Perfil</a>
+				    	<a class="dropdown-item" href="shopping-list.php">Mirar en la cesta</a>
+				    	<div class="dropdown-divider"></div>
+				    	<a class="dropdown-item" href="sign-out.php">Cerrar sesión</a>
+				  	</div>
+				</div>
+				<a href="#" role="button" class="btn btn-info">Carrito</a>
 			</li>
 		</ul>
 	</div>

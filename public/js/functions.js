@@ -1,5 +1,3 @@
-document.getElementById("searching").onkeyup = find_item; 
-
 function find_item() {
 	
 	xmlhttp = new XMLHttpRequest();
@@ -15,6 +13,7 @@ function find_item() {
 			descriptions = xmldoc.getElementsByTagName("DESCRIPTION");
 			prices = xmldoc.getElementsByTagName("PRICE");
 			images = xmldoc.getElementsByTagName("IMAGE");
+
 			for(i = 0; i < codes.length; i++) {
 
 				source += '<div class="col-xs-4"><div class="card"><img class="card-img-top" src="'
@@ -33,7 +32,51 @@ function find_item() {
 
 	xmlhttp.open("POST","../models/AjaxItemsFinder.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("searching=" + document.getElementById("searching").value);
+	xmlhttp.send("searching=" + document.getElementById("searching-item").value);
 	
+}
+
+function find_user() {
+	
+	xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.onreadystatechange = function() {
+
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+			xmldoc = xmlhttp.responseXML;
+			var source = "";
+			ids = xmldoc.getElementsByTagName("IDUSER");
+			passwords = xmldoc.getElementsByTagName("PASSWORD");
+			firstnames = xmldoc.getElementsByTagName("FIRSTNAME");
+			lastnames = xmldoc.getElementsByTagName("LASTNAME");
+			emails = xmldoc.getElementsByTagName("EMAIL");
+			permissions = xmldoc.getElementsByTagName("PERMISSION");
+
+			for(i = 0; i < ids.length; i++) {
+
+				source += '<tr><th scope="row">' 
+					+ (i + 1) + '</th><td>' 
+					+ ids[i].innerHTML + '</td><td>' 
+					+ passwords[i].innerHTML + '</td><td>' 
+					+ firstnames[i].innerHTML + '</td><td>' 
+					+ lastnames[i].innerHTML + '</td><td>' 
+					+ emails[i].innerHTML + '</td><td>' 
+					+ permissions[i].innerHTML + '</td><td><button type="submit" name="' 
+					+ ids[i].innerHTML + '_change" class="btn btn-secondary">Cambiar rol</button></td><td><button type="submit" name="' 
+					+ ids[i].innerHTML + '_modify" class="btn btn-secondary">Editar</button></td><td><button type="submit" name="' 
+					+ ids[i].innerHTML + '_delete" class="btn btn-warning">Banear</button></td></tr>';
+
+		   	}
+
+			document.getElementById("users-rows").innerHTML = source;
+
+		}    
+
+	}
+
+	xmlhttp.open("POST","../models/AjaxUsersFinder.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("searching=" + document.getElementById("searching-user").value);
 	
 }

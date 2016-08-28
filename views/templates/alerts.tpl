@@ -9,6 +9,36 @@
 	</div>
 <!-- END BLOCK : user_success -->
 
+<!-- START BLOCK : success_modification -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-success">
+				<b>Ya está!</b> Los cambios han sido guardados.
+			</div>
+		</div>	
+	</div>
+<!-- END BLOCK : success_modification -->
+
+<!-- START BLOCK : success_delete -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-success">
+				<b>Ya esta!</b> El borrado se ha ejecutado con éxito.
+			</div>
+		</div>	
+	</div>
+<!-- END BLOCK : success_delete -->
+
+<!-- START BLOCK : success_change -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-success">
+				<b>Ya esta!</b> El cambio de rol se ha ejecutado con éxito.
+			</div>
+		</div>	
+	</div>
+<!-- END BLOCK : success_change -->
+
 <!-- ALERT ERROR -->
 <!-- START BLOCK : password_error_1 -->
 	<div class="row">
@@ -50,6 +80,36 @@
 	</div>
 <!-- END BLOCK : user_error -->
 
+<!-- START BLOCK : error_modification -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-danger">
+				<b>Hay un problema!</b> Ha habido un error durante el guardado de datos.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : error_modification -->
+
+<!-- START BLOCK : error_delete -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-danger">
+				<b>Hay un problema!</b> Ha habido un error durante el borrado de datos.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : error_delete -->
+
+<!-- START BLOCK : error_change -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-danger">
+				<b>Hay un problema!</b> Ha habido un error durante el cambio de rol.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : error_change -->
+
 <!-- ALERT WARNING -->
 <!-- START BLOCK : nickname_error -->
 	<div class="row">
@@ -80,6 +140,36 @@
 		</div>
 	</div>
 <!-- END BLOCK : password_error_4 -->
+
+<!-- START BLOCK : password_old_error -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-warning">
+				<b>No tan deprisa!</b> Tienes que rellenar el campo <i>Old Password</i>.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : password_old_error -->
+
+<!-- START BLOCK : password_new_error -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-warning">
+				<b>No tan deprisa!</b> Tienes que rellenar el campo <i>New Password</i>.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : password_new_error -->
+
+<!-- START BLOCK : rpassword_new_error -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-warning">
+				<b>No tan deprisa!</b> Tienes que repetir la contraseña nueva.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : rpassword_new_error -->
 
 <!-- START BLOCK : first_name_error -->
 	<div class="row">

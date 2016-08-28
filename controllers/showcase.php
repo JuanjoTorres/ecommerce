@@ -22,16 +22,13 @@
 	*/
 	@$user = show_user($_SESSION['id_user']);
 	$selection = isset($_SESSION['id_user'])? $user->getPermission() : 0;
-
 	switch($selection) {
 
-		case 1: 
+		case 1:
 			$showcase_tem->assignInclude('menu', '../views/templates/menu-user.tpl');
-			$showcase_tem->assign('user_name', $user->getFirstName());
 			break;
 		case 2:
 			$showcase_tem->assignInclude('menu', '../views/templates/menu-admin.tpl');
-			$showcase_tem->assign('user_name', $user->getFirstName());
 			break;
 		default:
 			header("Location: sign-in.php");
@@ -40,6 +37,7 @@
 	}
 
 	$showcase_tem->prepare();
+	$showcase_tem->newBlock('search_item');
 
 	// Array de objetos Item.
 	$items = show_items();
@@ -47,7 +45,7 @@
 	// Extrae la informacion de los objetos y los visualiza en cards.
 	for($i = 0; $i < count($items); $i++) {
 
-		$showcase_tem->newBlock('card', './views/templates/card.tpl');
+		$showcase_tem->newBlock('card');
 		$showcase_tem->assign('card_image', $items[$i]->getImage());
 		$showcase_tem->assign('card_name', $items[$i]->getName());
 		$showcase_tem->assign('card_price', $items[$i]->getPrice());
