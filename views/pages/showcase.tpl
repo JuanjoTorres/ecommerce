@@ -8,42 +8,91 @@
 				<!-- START BLOCK : card -->
 				<div class="col-xs-4">
 					<div class="card">
-						<img class="card-img-top" src="{card_image}" alt="Card Image">
+						<img class="card-img-top card_image" src="{card_image}" alt="Card Image">
 						<div class="card-block">
 							<div class="card-title">
 								<div class="pull-xs-right">
-									<h4 class="text-muted">{card_price}€</h4>
+									<h4 class="text-muted card_price">{card_price}€</h4>
 								</div>
-								<h4 class="card-title">{card_name}</h4>
+								<h4 class="card-title card_name">{card_name}</h4>
 							</div>
-							<p class="card-text">{card_description}</p>
-							<div class="text-xs-center">
-								<a class="btn btn-success " href="#">Buy</a>
-							</div>
+							<p class="card-text card_description">{card_description}</p>
+							<!-- START BLOCK : item_accept -->
+								<div class="text-xs-center">
+									<a class="btn btn-success " href="#">Buy</a>
+								</div>
+							<!-- START BLOCK : item_accept -->
+							<!-- START BLOCK : item_options -->
+								<div class="text-xs-right">
+
+									<button class="btn btn-secondary edit_item" name="{id_item}_modify" data-toggle="modal" data-target="#item-modal">Editar</button>
+									<button class="btn btn-warning" name="{id_item}_delete">Eliminar</button>
+									
+								</div>
+							<!-- START BLOCK : item_options -->
 						</div>
 					</div>
 				</div>
 				<!-- END BLOCK : card -->
 			</div>
-			<div class="modal fade" role="dialog">
+			<div id="item-modal" class="modal fade">
 				<div class="modal-dialog modal-lg" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button class="close" data-dismiss="modal">
-								<span>&times;</span>
-							</button>
-							<h4 class="modal-title">Auntenticación</h4>
+						    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						      <span aria-hidden="true">&times;</span>
+						    </button>
+						    <h4 class="modal-title">Inventario</h4>
 						</div>
-						<div class="modal-body">
-							
-						</div>
-						<div class="modal-footer">
-							<button class="btn-secondary" data-dismiss="modal">Close</button>
-						</div>
+						<form method="POST">
+							<div class="modal-body">
+							    
+							    	<div class="container-fluid">
+							    		<div class="form-group row">
+								    		<div class="col-sm-6">
+								    			<label for="item_name" class="form-control-label">Nombre</label>
+								    			<input type="text" class="form-control" name="item_name" id="item-name" required>
+								    		</div>
+								    		<div class="col-sm-6">
+								    			<label for="item_price" class="form-control-label">Precio</label>
+								    			<div class="input-group">
+								    				<input type="text" class="form-control" name="item_price" id="item-price" required>
+								    				<div class="input-group-addon">€</div>
+								    			</div>
+								    		</div>
+								    	</div>
+								    	<div class="form-group row">
+								    		<div class="col-xs-12">
+								    			<label for="item_description" class="form-control-label">Descripción</label>
+									    		<textarea class="form-control" name="item_description" id="item-description" required></textarea>
+									    	</div>
+								    	</div>
+								    	<div class="form-group row">
+								    		<div class="col-xs-6">
+									    		<label class="custom-file">
+													<input type="file" name="item_image" class="custom-file-input" id="item-image" required>
+													<span class="custom-file-control"></span>
+												</label>
+											</div>
+											<div class="col-xs-6">
+												<div id="item-thumbnail" style="width:70px;height:70px;background-size:100% 100%;">		
+												</div>
+											</div>
+								    	</div>
+								    	<input type="hidden" name="is-in-there" id="item-check">
+							    	</div>
+							</div>
+							<div class="modal-footer">
+							    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+							    <button type="submit" name="item_accept" class="btn btn-primary">Guardar</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- INCLUDE BLOCK : alerts -->
 		<!-- INCLUDE BLOCK : footer -->
+
 	</body>
 </html>

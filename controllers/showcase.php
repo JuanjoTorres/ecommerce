@@ -29,6 +29,8 @@
 			break;
 		case 2:
 			$showcase_tem->assignInclude('menu', '../views/templates/menu-admin.tpl');
+				$showcase_tem->assignInclude('item_modal', '../views/templates/item-modal.tpl');
+			$showcase_tem->assignInclude('alerts', '../views/templates/alerts.tpl');
 			break;
 		default:
 			header("Location: sign-in.php");
@@ -42,15 +44,80 @@
 	// Array de objetos Item.
 	$items = show_items();
 
-	// Extrae la informacion de los objetos y los visualiza en cards.
-	for($i = 0; $i < count($items); $i++) {
+	switch($selection) {
 
-		$showcase_tem->newBlock('card');
-		$showcase_tem->assign('card_image', $items[$i]->getImage());
-		$showcase_tem->assign('card_name', $items[$i]->getName());
-		$showcase_tem->assign('card_price', $items[$i]->getPrice());
-		$showcase_tem->assign('card_description', $items[$i]->getDescription());
+		case 1:
+			// Extrae la informacion de los objetos y los visualiza en cards.
+			for($i = 0; $i < count($items); $i++) {
 
+				$showcase_tem->newBlock('card');
+				$showcase_tem->assign('card_image', $items[$i]->getImage());
+				$showcase_tem->assign('card_name', $items[$i]->getName());
+				$showcase_tem->assign('card_price', $items[$i]->getPrice());
+				$showcase_tem->assign('card_description', $items[$i]->getDescription());
+				$showcase_tem->newBlock('item_accept');
+
+			}
+			break;
+		
+		case 2:
+
+			// Extrae la informacion de los objetos y los visualiza en cards.
+			for($i = 0; $i < count($items); $i++) {
+
+				$showcase_tem->newBlock('card');
+				$showcase_tem->assign('card_image', $items[$i]->getImage());
+				$showcase_tem->assign('card_name', $items[$i]->getName());
+				$showcase_tem->assign('card_price', $items[$i]->getPrice());
+				$showcase_tem->assign('card_description', $items[$i]->getDescription());
+				$showcase_tem->newBlock('item_options');
+				$showcase_tem->assign('id_item', $items[$i]->getCode());
+			}
+
+			for($i = 0; $i < count($items); $i++) {
+
+				if(isset($_POST[$items[$i]->getCode()."_delete"])) {
+
+					$isSaved = delete_item($items[$i]->getCode());
+
+					if($isSaved)
+						$showcase_tem->newBlock('success_delete');
+					else
+						$showcase_tem->newBlock('error_delete');
+
+				}
+			}
+
+			if(isset($_POST['item_accept'])) {
+
+					if(!empty($_POST["is-in-there"])){
+						$isSaved = modify_item($_POST["is-in-there"],
+						$_POST['item_name'], 
+						$_POST['item_description'],
+						$_POST['item_price'], 
+						$_POST['item_image']);
+
+						if($isSaved)
+							$showcase_tem->newBlock('success_modification');
+						else
+							$showcase_tem->newBlock('error_modification');
+					}else{
+						$isSaved = insert_item(
+						$_POST['item_name'], 
+						$_POST['item_description'],
+						$_POST['item_price'], 
+						$_POST['item_image']);
+
+						if($isSaved)
+							$showcase_tem->newBlock('success_modification');
+						else
+							$showcase_tem->newBlock('error_modification');
+					}
+					
+			//	}
+
+			}
+			break;
 	}
 
 	$showcase_tem->printToScreen();

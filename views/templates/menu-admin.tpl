@@ -25,15 +25,16 @@
 					<button type="button" class="btn btn-secondary">A</button>
 					<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
 				  	<div class="dropdown-menu">
+				  		<a class="dropdown-item" href="showcase.php">Expositor</a>
+				    	<a class="dropdown-item" href="order-list.php">Historial de ventas</a>
 				    	<a class="dropdown-item" href="shopping-list.php">Añadir item</a>
-				    	<a class="dropdown-item" href="shopping-list.php">Historial de ventas</a>
 				    	<div class="dropdown-divider"></div>
 				    	<a class="dropdown-item" href="user-list.php">Lista de usuarios</a>
 				    	<div class="dropdown-divider"></div>
 				    	<a class="dropdown-item" href="sign-out.php">Cerrar sesión</a>
 				  	</div>
 				</div>
-				<a href="#" role="button" class="btn btn-info">Añadir Item</a>
+				<button class="btn btn-info add-item" data-toggle="modal" data-target="#item-modal">Añadir Item</button>
 			</li>
 		</ul>
 	</div>

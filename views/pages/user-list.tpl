@@ -37,7 +37,6 @@
 										<td><button type="submit" name="{id_user}_delete" class="btn btn-warning">Banear</button></td>
 									</tr>
 								<!-- END BLOCK : user_row -->
-								<input type="hidden" id="data" name="data">
 							</tbody>
 						</table>
 					</form>

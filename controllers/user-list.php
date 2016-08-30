@@ -37,7 +37,6 @@
 	}
 
 	for($i = 0; $i < count($users); $i++) {
-
 		if(isset($_POST[$users[$i]->getIdUser().'_modify'])) {
 
 			$_SESSION['id_user_modify'] = $users[$i]->getIdUser();

@@ -200,3 +200,44 @@
 		</div>
 	</div>
 <!-- END BLOCK : email_error_2 -->
+
+<!-- START BLOCK : price_error -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-warning">
+				<b>No tan deprisa!</b> Tienes que rellenar el campo <i>Precio</i>.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : price_error -->
+
+<!-- START BLOCK : description_error -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-warning">
+				<b>No tan deprisa!</b> Tienes que rellenar el campo <i>Descripción</i>.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : description_error -->
+
+<!-- START BLOCK : image_error -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-warning">
+				<b>No tan deprisa!</b> Tienes que rellenar el campo <i>Imagen</i>.
+			</div>
+		</div>
+	</div>
+<!-- END BLOCK : image_error -->
+
+<!-- ALERT INFO -->
+<!-- START BLOCK : orders_info -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-info">
+				<b>Demasiado pronto!</b> Aun no se han creado datos.
+			</div>
+		</div>	
+	</div>
+<!-- END BLOCK : orders_info -->

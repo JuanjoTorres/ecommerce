@@ -118,7 +118,7 @@
 
 				if(empty($_POST['old_password']))
 					$profile_tem->newBlock('password_old_error');
-				else if(md5($_POST['old_password']) != $$user_modify->getPassword())
+				else if(md5($_POST['old_password']) != $user_modify->getPassword())
 					$profile_tem->newBlock('password_error_1');
 				else if(empty($_POST['new_password']))
 					$profile_tem->newBlock('password_new_error');
@@ -128,7 +128,7 @@
 					$profile_tem->newBlock('password_error_1');
 				else {
 
-					$isSaved = modify_password($$user_modify->getIdUser(), $_POST['new_password']);
+					$isSaved = modify_password($user_modify->getIdUser(), $_POST['new_password']);
 					if($isSaved)
 						$profile_tem->newBlock('success_modification');
 					else

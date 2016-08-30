@@ -5,11 +5,13 @@
 			<li class="nav-item">
 				<p class="text-muted m-b-0">Bienvenido cliente</p>
 			</li>
-			<li class="nav-item">
-				<form class="form-inline">
-					<input class="form-control" type="text" id="searching" placeholder="Search your product!"></input>
-				</form>
-			</li>
+			<!-- NEW BLOCK : search_item -->
+				<li class="nav-item">
+					<form class="form-inline">
+						<input class="form-control" type="text" id="searching-item" placeholder="Search your product!" onkeyup="find_item()"></input>
+					</form>
+				</li>
+			<!-- END BLOCK : search_item -->
 			<li class="nav-item">
 				<div class="btn-group">
 					<button type="button" class="btn btn-secondary">A</button>
