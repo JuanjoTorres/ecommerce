@@ -37,8 +37,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
+			<div class="row">
 				<div class="col-sm-4 offset-sm-4 m-t-2">
 					<div class="card">
 						<div class="card-header">

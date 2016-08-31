@@ -8,7 +8,7 @@
 			<!-- START BLOCK : search_item -->
 				<li class="nav-item">
 					<form class="form-inline">
-						<input class="form-control" type="text" id="searching-item" placeholder="Search your product!" onkeyup="find_item()"></input>
+						<input class="form-control" type="text" id="searching-item" placeholder="Search your product!" onkeyup="find_item(2)"></input>
 					</form>
 				</li>
 			<!-- END BLOCK : search_item -->
@@ -22,19 +22,24 @@
 			<!-- END BLOCK : search_user -->
 			<li class="nav-item">
 				<div class="btn-group">
-					<button type="button" class="btn btn-secondary">A</button>
+					<button type="button" class="btn btn-secondary"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i></button>
 					<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
 				  	<div class="dropdown-menu">
 				  		<a class="dropdown-item" href="showcase.php">Expositor</a>
 				    	<a class="dropdown-item" href="order-list.php">Historial de ventas</a>
-				    	<a class="dropdown-item" href="shopping-list.php">Añadir item</a>
 				    	<div class="dropdown-divider"></div>
 				    	<a class="dropdown-item" href="user-list.php">Lista de usuarios</a>
 				    	<div class="dropdown-divider"></div>
 				    	<a class="dropdown-item" href="sign-out.php">Cerrar sesión</a>
 				  	</div>
 				</div>
-				<button class="btn btn-info add-item" data-toggle="modal" data-target="#item-modal">Añadir Item</button>
+				<!-- START BLOCK : btn_add_item -->
+					<button class="btn btn-info add-item" data-toggle="modal" data-target="#item-modal">Añadir Item</button>
+				<!-- START BLOCK : btn_add_item -->
+				<!-- START BLOCK : btn_showcase -->
+					<a class="btn btn-info" href="showcase.php">Expositor</a>
+				<!-- START BLOCK : btn_showcase -->
+
 			</li>
 		</ul>
 	</div>

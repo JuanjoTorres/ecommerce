@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-faded m-b-2">
-	<a class="navbar-brand" href="showcase.php">Roser</a>
+	<a class="navbar-brand">Roser</a>
 	<div class="pull-xs-right">
 		<ul class="nav nav-inline">
 		  <li class="nav-item">

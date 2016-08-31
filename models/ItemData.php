@@ -3,6 +3,38 @@
 	include_once('MySQLDataSource.php');
 	include_once('Item.php');
 
+	/** -- Muestra la informacion de un solo item
+	 * parameter -> code: codigo del item
+	*/
+	function show_item($code) {
+
+		$connection = new MySQLDataSource();
+		$connection->connect('localhost', 'root', '', 'ecommerce');
+		$query = "SELECT * FROM items WHERE code=$code;";
+		$connection->execute_query($query);
+		$row = $connection->next();
+
+		if(!$row) {
+
+			$connection->disconnect();
+			return false;
+
+		} else {
+
+			$item = new Item();
+			$item->setCode($row->code);
+			$item->setName($row->name);
+			$item->setDescription($row->description);
+			$item->setPrice($row->price);
+			$item->setImage($row->image);
+
+		}
+
+		$connection->disconnect();
+		return $item;
+
+	}
+
 	/** -- Muestra todos los items registrados en la base de datos
 	*/
 	function show_items() {
@@ -86,8 +118,15 @@
 
 		if($row->code) {
 
-			$image = "../public/img/".$image;
-			$query = "UPDATE items SET name='$name', description='$description', price=$price, image='$image' WHERE code=$code;";
+			if($image == "")
+				$query = "UPDATE items SET name='$name', description='$description', price=$price WHERE code=$code;";
+			else {
+
+				$image = "../public/img/".$image;
+				$query = "UPDATE items SET name='$name', description='$description', price=$price, image='$image' WHERE code=$code;";
+
+			}
+			
 			$isInserted = $connection->execute_query($query);
 
 			if($isInserted) {

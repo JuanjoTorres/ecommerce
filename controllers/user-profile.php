@@ -33,6 +33,8 @@
 	switch($selection) {
 
 		case 1:
+
+			$profile_tem->newBlock('btn_car');
 			$profile_tem->assign('user_first_name', $user->getFirstName());
 			$profile_tem->assign('user_last_name', $user->getLastName());
 			$profile_tem->assign('user_email', $user->getEmail());
@@ -91,6 +93,7 @@
 			$profile_tem->assign('user_first_name', $user_modify->getFirstName());
 			$profile_tem->assign('user_last_name', $user_modify->getLastName());
 			$profile_tem->assign('user_email', $user_modify->getEmail());
+			$profile_tem->newBlock('btn_showcase');
 
 			if(isset($_POST['user_accept'])) {
 

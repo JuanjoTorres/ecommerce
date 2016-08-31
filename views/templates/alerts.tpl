@@ -9,6 +9,16 @@
 	</div>
 <!-- END BLOCK : user_success -->
 
+<!-- START BLOCK : success_add -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-success">
+				<b>Bien hecho!</b> Los nuevos datos ya están añadidos.
+			</div>
+		</div>	
+	</div>
+<!-- END BLOCK : success_add -->
+
 <!-- START BLOCK : success_modification -->
 	<div class="row">
 		<div class="col-xs-3 offset-xs-9">
@@ -59,6 +69,16 @@
 		</div>	
 	</div>
 <!-- END BLOCK : password_error_2 -->
+
+<!-- START BLOCK : error_add -->
+	<div class="row">
+		<div class="col-xs-3 offset-xs-9">
+			<div class="alert alert-danger">
+				<b>Vaya lío!</b> Ha habido un problema con los nuevos datos.
+			</div>
+		</div>	
+	</div>
+<!-- END BLOCK : error_add -->
 
 <!-- START BLOCK : email_error_1 -->
 	<div class="row">

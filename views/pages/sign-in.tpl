@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<!-- INCLUDE BLOCK : head -->
-	<body>
+	<body id="sign-in">
 		<!-- INCLUDE BLOCK : menu -->
 		<div class="container-fluid">
 			<div class="row">
@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<!-- INCLUDE BLOCK : alerts -->
-			<!-- INCLUDE BLOCK : footer -->
 		</div>
+		<!-- INCLUDE BLOCK : footer -->
 	</body>
 </html>

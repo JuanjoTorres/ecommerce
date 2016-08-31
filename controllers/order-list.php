@@ -49,7 +49,6 @@
 					$order_list_tem->assign('counter', $i);
 					$order_list_tem->assign('date_order', $orders[$i]->getDate());
 					$order_list_tem->assign('customer_order', $orders[$i]->getIdCustomer());
-					$order_list_tem->assign('amount_order', $orders[$i]->getAmount());
 
 				}
 
@@ -59,6 +58,7 @@
 		
 		case 2:
 			$order_list_tem->assignInclude('menu', "../views/templates/menu-admin.tpl");
+			$order_list_tem->newBlock('btn_showcase');
 
 			$orders = show_orders();
 
@@ -66,7 +66,7 @@
 				$order_list_tem->newBlock('orders_info');
 			else {
 
-				for($i = 0; $i < sizeOf($pedidos); $i++) {
+				for($i = 0; $i < sizeOf($orders); $i++) {
 
 					$order_list_tem->newBlock('order_row');
 					$order_list_tem->assign('counter', $i);

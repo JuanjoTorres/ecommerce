@@ -1,5 +1,34 @@
-.card img {
+.card_image {
 	
 	width: 100%;
+	height: 348px;
+
+}
+
+.card_text,
+.card_description {
+
+	text-overflow: ellipsis;
+
+}
+
+#sign-in {
+
+	background-size: 100%;
+	background-image: url('../img/sign-in-bg.jpg');
+
+}
+
+footer {
+
+	position: absolute;
+	bottom: 0; 
+
+}
+
+#showcase .card form,
+#inline {
+
+	display: inline-block;
 
 }

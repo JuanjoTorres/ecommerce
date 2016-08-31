@@ -81,12 +81,12 @@
 	 * parameter -> id_customer: nombre clave del cliente {String}
 	 * parameter -> amount: cantidad que se pago por el pedido {decimal}
 	*/
-	function insert_order($id_customer, $amount) {
+	function insert_order($id_customer) {
 
 		$date = date('Y/m/d H:i:s');
 		$connection = new MySQLDataSource();
 		$connection->connect('localhost', 'root', '', 'ecommerce');
-		$query = "INSERT INTO orders (date, id_customer, amount) VALUES ('".$date."', '".$id_customer."', '".$amount."');";
+		$query = "INSERT INTO orders (date, id_customer) VALUES ('".$date."', '".$id_customer."');";
 		$isInserted = $connection->execute_query($query);
 
 		if($isInserted) {

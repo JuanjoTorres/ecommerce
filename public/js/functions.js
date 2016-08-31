@@ -1,4 +1,4 @@
-function find_item() {
+function find_item(permission) {
 	
 	xmlhttp = new XMLHttpRequest();
 
@@ -14,15 +14,35 @@ function find_item() {
 			prices = xmldoc.getElementsByTagName("PRICE");
 			images = xmldoc.getElementsByTagName("IMAGE");
 
-			for(i = 0; i < codes.length; i++) {
+			if(permission != 2) {
 
-				source += '<div class="col-xs-4"><div class="card"><img class="card-img-top" src="'
-					+ images[i].innerHTML + '" alt="Card Image"><div class="card-block"><div class="card-title"><div class="pull-xs-right"><h4 class="text-muted">'
-					+ prices[i].innerHTML + '€</h4></div><h4 class="card-title">'
-					+ names[i].innerHTML + '</h4></div><p class="card-text">'
-					+ descriptions[i].innerHTML + '</p><div class="text-xs-center"><a class="btn btn-success " href="#">Buy</a></div></div></div></div>';
+				for(i = 0; i < codes.length; i++) {
 
-		   	}
+					source += '<div class="col-xs-4"><div class="card"><img class="card-img-top card_image" src="'
+				   		+ images[i].innerHTML + '" alt="Card Image"><div class="card-block"><div class="card-title"><div class="pull-xs-right"><h4 class="text-muted card_price">'
+				   		+ prices[i].innerHTML + '€</h4></div><h4 class="card-title card_name">'
+				   		+ names[i].innerHTML + '</h4></div><p class="card-text card_description">'
+				   		+ descriptions[i].innerHTML + '</p><div class="text-xs-center"><button id="'
+				   		+ codes[i].innerHTML + '"class="btn btn-success to-car">Buy</button></div></div></div></div>';
+
+			   	}
+
+			} else {
+
+				for(i = 0; i < codes.length; i++) {
+
+					source += '<div class="col-xs-4"><div class="card"><img class="card-img-top card_image" src="'
+				   		+ images[i].innerHTML + '" alt="Card Image"><div class="card-block"><div class="card-title"><div class="pull-xs-right"><h4 class="text-muted card_price">'
+				   		+ prices[i].innerHTML + '€</h4></div><h4 class="card-title card_name">'
+				   		+ names[i].innerHTML + '</h4></div><p class="card-text card_description">'
+				   		+ descriptions[i].innerHTML + '</p><div class="text-xs-right"><button class="btn btn-secondary edit_item" name="'
+				   		+ codes[i].innerHTML + '_modify" data-toggle="modal" data-target="#item-modal">Editar</button><form method="POST"><button class="btn btn-warning" name="'
+				   		+ codes[i].innerHTML + '_delete">Eliminar</button></form></div></div></div></div>';
+
+			   	}
+
+			}
+			
 
 			document.getElementById("cards").innerHTML = source;
 

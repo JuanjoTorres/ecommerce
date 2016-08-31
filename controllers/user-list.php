@@ -20,6 +20,7 @@
 
 	$user_list_tem->prepare();
 	$user_list_tem->newBlock('search_user');
+	$user_list_tem->newBlock('btn_showcase');
 
 	$users = show_users();
 

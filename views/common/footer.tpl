@@ -1,6 +1,6 @@
-<footer class="navbar navbar-fixed-bottom navbar-light bg-faded p-y-2 m-t-1">
+<footer class="navbar navbar-light bg-faded p-y-2 m-t-1">
 	<div class="container">
-		<p class="text-muted">Diseñado y creado con todo el amor del mundo. Mantenido por Juanjo Torres.<br>Actualmente v1.0.0-alpha Code licensed MIT.</p>
+		<p class="text-muted">Diseñado y creado con todo el amor del mundo. Mantenido por <a class="nav-link text-muted" href="https://twitter.com/TorresJuanjo_">@TorresJuanjo_</a>.<br>Actualmente v1.0.0-alpha Code licensed <a class="nav-link text-muted" href="https://github.com/JuanjoTorres/ecommerce/blob/master/LICENSE">Apache</a>.</p>
 		<nav class="nav nav-inline">
 		  <a class="nav-link text-muted" href="https://github.com/JuanjoTorres/ecommerce">GitHub</a>
 		</nav>
