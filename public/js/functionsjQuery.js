@@ -39,7 +39,6 @@ function main() {
 
 	});
 
-	// Fuente: http://stackoverflow.com/questions/18457340/how-to-preview-selected-image-in-input-type-file-in-popup-using-jquery/18457508
 	function readURL(input) {
 
 	    if (input.files && input.files[0]) {
