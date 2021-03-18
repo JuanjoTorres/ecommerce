@@ -1,5 +1,6 @@
 <?php
-	
+
+    include_once('config.php');
 	include_once('MySQLDataSource.php');
 	include_once('Order.php');
 
@@ -9,7 +10,10 @@
 	function show_orders_user($id_user) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($db['default']['hostname'],
+            $db['default']['username'],
+            $db['default']['password'],
+            $db['default']['database']);
 		$query = "SELECT * FROM orders WHERE id_user='".$id_user."'";
 		$connection->execute_query($query);
 		$row = $connection->next();

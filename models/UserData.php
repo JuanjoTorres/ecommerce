@@ -1,5 +1,6 @@
 <?php
 
+    include_once('config.php');
 	include_once('MySQLDataSource.php');
 	include_once('User.php');
 
@@ -8,7 +9,10 @@
 	function show_users() {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($db['default']['hostname'],
+            $db['default']['username'],
+            $db['default']['password'],
+            $db['default']['database']);
 		$query = "SELECT * FROM users;";
 		$connection->execute_query($query);
 		$row = $connection->next();

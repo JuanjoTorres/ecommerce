@@ -1,5 +1,6 @@
 <?php
 
+    include_once('config.php');
 	include_once('MySQLDataSource.php');
 	include_once('User.php');
 	include_once('UserData.php');
@@ -9,7 +10,10 @@
 
 	$searching = utf8_decode($_POST['searching']);
 	$connection = new MySQLDataSource();
-	$connection->connect('localhost', 'root', '', 'ecommerce');
+    $connection->connect($db['default']['hostname'],
+        $db['default']['username'],
+        $db['default']['password'],
+        $db['default']['database']);
 	$query = "SELECT * FROM users WHERE id_user LIKE '" . $searching . "%' ORDER BY id_user";
 	$connection->execute_query($query);
 	$row = $connection->next();

@@ -1,5 +1,6 @@
 <?php
 
+    include_once('config.php');
 	include_once('MySQLDataSource.php');
 	include_once('Item.php');
 
@@ -9,7 +10,10 @@
 	function show_item($code) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($db['default']['hostname'],
+            $db['default']['username'],
+            $db['default']['password'],
+            $db['default']['database']);
 		$query = "SELECT * FROM items WHERE code=$code;";
 		$connection->execute_query($query);
 		$row = $connection->next();
