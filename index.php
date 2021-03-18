@@ -1,4 +1,5 @@
 <html>
 <?php
-	header('Location: controllers/sign-in.php');
+	//header('Location: controllers/sign-in.php');
+    echo("hello");
 ?>
