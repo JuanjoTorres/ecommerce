@@ -9,7 +9,7 @@
 
 			$this->connection = mysqli_connect($host, $user, $pass) or die("ERROR");
 			mysqli_select_db($this->connection, $base);
-			mysqli_set_charset($this->connection, "utf8");
+			mysqli_set_charset($this->connection, "utf");
 
 		}
 

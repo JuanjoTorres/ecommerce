@@ -1,6 +1,6 @@
 <?php
 
-    include_once('config.php');
+    include_once('../config.php');
 	include_once('MySQLDataSource.php');
 	include_once('Item.php');
 	include_once('ItemData.php');
@@ -10,10 +10,10 @@
 
 	$searching = utf8_decode($_POST['searching']);
 	$connection = new MySQLDataSource();
-	$connection->connect($db['default']['hostname'],
-        $db['default']['username'],
-        $db['default']['password'],
-        $db['default']['database']);
+    $connection->connect($GLOBALS['db']['default']['hostname'],
+        $GLOBALS['db']['default']['username'],
+        $GLOBALS['db']['default']['password'],
+        $GLOBALS['db']['default']['database']);
 	$query = "SELECT * FROM items WHERE name LIKE '" . $searching . "%' ORDER BY name";
 	$connection->execute_query($query);
 	$row = $connection->next();

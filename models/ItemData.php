@@ -1,6 +1,6 @@
 <?php
 
-    include_once('config.php');
+    include_once('../config.php');
 	include_once('MySQLDataSource.php');
 	include_once('Item.php');
 
@@ -10,10 +10,10 @@
 	function show_item($code) {
 
 		$connection = new MySQLDataSource();
-        $connection->connect($db['default']['hostname'],
-            $db['default']['username'],
-            $db['default']['password'],
-            $db['default']['database']);
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT * FROM items WHERE code=$code;";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -44,7 +44,10 @@
 	function show_items() {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT * FROM items;";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -86,7 +89,10 @@
 	function insert_item($name, $description, $price, $image) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$image = "../public/img/".$image;
 		$query = "INSERT INTO items (name, description, price, image) VALUES ('$name', '$description', $price, '$image');";
 		$isInserted = $connection->execute_query($query);
@@ -115,7 +121,10 @@
 	function modify_item($code, $name, $description, $price, $image) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT code FROM items WHERE code='".$code."';";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -160,7 +169,10 @@
 	function delete_item($code) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT code FROM items WHERE code='".$code."';";
 		$connection->execute_query($query);
 		$row = $connection->next();

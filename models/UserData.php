@@ -1,6 +1,6 @@
 <?php
 
-    include_once('config.php');
+    include_once('../config.php');
 	include_once('MySQLDataSource.php');
 	include_once('User.php');
 
@@ -9,10 +9,10 @@
 	function show_users() {
 
 		$connection = new MySQLDataSource();
-        $connection->connect($db['default']['hostname'],
-            $db['default']['username'],
-            $db['default']['password'],
-            $db['default']['database']);
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT * FROM users;";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -52,7 +52,10 @@
 	function show_user($id_user) {
 
 		$connection = new MySQLDataSource(); // Establecemos conexion.
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT * FROM users WHERE id_user='".$id_user."';";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -89,7 +92,10 @@
 	function insert_user($nickname, $password, $first_name, $last_name, $email) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "INSERT INTO users (id_user, password, first_name, last_name, email) VALUES ('".$nickname."', '".md5($password)."', '".$first_name."', '".$last_name."', '".$email."')";
 
 		if($connection->execute_query($query)) {
@@ -113,7 +119,10 @@
 	function check_user($nickname, $password) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT id_user, password FROM users WHERE id_user='".$nickname."' AND password='".$password."'";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -143,7 +152,10 @@
 	*/
 	function modify_user($id_user, $first_name, $last_name, $email) {
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "UPDATE users SET first_name='".$first_name."', last_name='".$last_name."', email='".$email."' WHERE id_user='".$id_user."';";
 
 		if($connection->execute_query($query)) {
@@ -167,7 +179,10 @@
 	function modify_password($id_user, $password) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "UPDATE users SET password='".md5($password)."' WHERE id_user='".$id_user."';";
 
 		if($connection->execute_query($query)) {
@@ -188,7 +203,10 @@
 	function delete_user($id_user) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT id_user FROM users WHERE id_user='".$id_user."';";
 		$connection->execute_query($query);
 		$row = $connection->next();
@@ -225,7 +243,10 @@
 	function change_rol($id_user) {
 
 		$connection = new MySQLDataSource();
-		$connection->connect('localhost', 'root', '', 'ecommerce');
+        $connection->connect($GLOBALS['db']['default']['hostname'],
+            $GLOBALS['db']['default']['username'],
+            $GLOBALS['db']['default']['password'],
+            $GLOBALS['db']['default']['database']);
 		$query = "SELECT id_user, permission FROM users WHERE id_user='".$id_user."';";
 		$connection->execute_query($query);
 		$row = $connection->next();
